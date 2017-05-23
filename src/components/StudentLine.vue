@@ -1,6 +1,12 @@
 <script>
   export default {
     props: ['student'],
+    /*  components: {
+      template: '#modal-template',
+    },*/
+    /*  data() {
+      showModal: false
+    },*/
     methods: {
       remove() {
         this.$emit('remove');
@@ -11,7 +17,7 @@
 
 <template lang="pug">
   div
-    | {{student.firstname}}
+    | {{student.firstname}} {{student.lastname}}
     button(@click="remove") Supprimer
 </template>
 
