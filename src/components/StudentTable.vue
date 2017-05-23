@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     getAll() {
-      axios.get('http://localhost:3000/students')
+      axios.get('http://localhost:8000/studentsList')
       .then((response) => {
         this.students = response.data;
       });
@@ -23,7 +23,7 @@ export default {
       this.students.splice(index, 1);
     },
     delete() {
-      axios.delete('http://localhost:3000/students/id')
+      axios.delete('http://localhost:8000/studentsList/id')
       .then((response) => {
         this.students = response.data;
       });
@@ -49,7 +49,7 @@ export default {
 
 <template>
   <div>
-    <student-line v-for='(student, index) in students' :key="student.id" :student="student" v-on:remove="remove(index)"></student-line>
+    <student-line v-for='(student, index) in studentsList' :key="student.id" :student="student" v-on:remove="remove(index)"></student-line>
   </div>
   <!--<input class="addStudent" v-model="newStudent" @keyup.enter="addStudent">-->
 </template>

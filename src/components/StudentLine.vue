@@ -17,7 +17,7 @@
 
 <template lang="pug">
   div
-    | {{student.firstname}} {{student.lastname}}
+    | {{student.first_name}} {{student.name}} {{ student.age }}
     button(@click="remove") Supprimer
 </template>
 
